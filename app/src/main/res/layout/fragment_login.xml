@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="SmallSp">
+
+    <LinearLayout
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_gravity="bottom|center"
+        android:clipToPadding="false">
+    <!--insert background picture into the layout-->
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/user_id"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="@string/login_id"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:layout_marginRight="@dimen/login_edit_box_margin_right"
+            android:layout_marginLeft="@dimen/login_edit_text_margin_left"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/lignt_red"
+            app:met_iconPadding="16dp"
+            android:textIsSelectable="true" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:layout_marginRight="@dimen/login_edit_text_margin_right"
+            android:layout_marginLeft="@dimen/login_edit_text_margin_left"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/accent"
+            app:met_iconPadding="16dp"
+            />
+
+
+        <com.hkm.ui.processbutton.iml.ActionProcessButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_button_margin_top"
+            android:layout_marginLeft="@dimen/login_button_margin_left"
+            android:layout_marginRight="@dimen/login_button_margin_right"
+            android:layout_marginBottom="@dimen/login_botton_margin_bottom"
+            android:textAllCaps="false"
+            app:pb_colorComplete="@color/green_complete"
+            app:pb_colorNormal="@color/lignt_red"
+            app:pb_colorPressed="@color/primary"
+            android:text="@string/login"
+            app:pb_textComplete="Successful"
+            app:pb_textProgress="Loading"
+            style="@style/LoginBotton"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/login_button_margin_left"
+            android:layout_marginRight="@dimen/login_button_margin_right"
+            android:layout_marginBottom="@dimen/login_botton_margin_bottom">
+
+            <TextView android:id="@+id/sign_up"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sign_up"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:text="@string/forget_password"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
