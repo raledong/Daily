@@ -1,5 +1,7 @@
 package rookie.android.daily.presentationmodel;
 
+import rookie.android.daily.enumerate.LoginResult;
+
 /**
  * Created by rale on 5/19/16.
  *
@@ -22,5 +24,13 @@ public class AuthCredentials {
 
     public String getPassword() {
         return password;
+    }
+
+    public LoginResult validate(String userId, String password){
+        if(userId.equals(""))
+            return LoginResult.LOGIN_ERROR_ID_NULL;
+        if(password.equals(""))
+            return LoginResult.LOGIN_ERROR_PASSWORD_NULL;
+        return LoginResult.VALID;
     }
 }

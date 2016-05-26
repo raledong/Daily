@@ -1,11 +1,15 @@
 package rookie.android.daily.login;
 
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+
+import com.hannesdorfmann.mosby.mvp.viewstate.RestorableViewState;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
 
 /**
  * Created by rale on 5/19/16.
  */
-public class LoginViewState implements ViewState<LoginView> {
+public class LoginViewState implements RestorableViewState<LoginView> {
 
     final int STATE_SHOW_LOGIN_FORM = 0;
     final int STATE_SHOW_LOADING = 1;
@@ -39,5 +43,15 @@ public class LoginViewState implements ViewState<LoginView> {
                 break;
             default:
         }
+    }
+
+    @Override
+    public void saveInstanceState(@NonNull Bundle out) {
+
+    }
+
+    @Override
+    public RestorableViewState<LoginView> restoreInstanceState(Bundle in) {
+        return null;
     }
 }

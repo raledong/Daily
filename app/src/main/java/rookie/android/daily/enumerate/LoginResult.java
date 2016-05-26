@@ -7,6 +7,7 @@ package rookie.android.daily.enumerate;
 public enum LoginResult {
     SUCCESS(0, "操作成功"),
     VALID(9, "正确"),
+    FAIL(10,"操作失败"),
 
     LOGIN_ERROR(1, "用户名或者密码填写错误"),
     LOGIN_ERROR_ID_NULL(2, "用户名不能为空"),
@@ -22,7 +23,7 @@ public enum LoginResult {
     private int errorCode;
     private String errorMessage;
 
-    private LoginResult(int code, String message){
+    LoginResult(int code, String message){
         this.errorCode = code;
         this.errorMessage = message;
     }

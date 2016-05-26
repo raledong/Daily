@@ -10,7 +10,30 @@
     <string name="sign_up">还没有账户？点此注册</string>
     <string name="forget_password">忘记密码</string>
 
+    <string name="mobile">手机号</string>
+    <string name="name">姓名</string>
+    <string name="repassword">再次输入密码</string>
+    <string name="signup">注    册</string>
 
+    <string name="back">返回</string>
     <!--登陆的报错信息-->
     <string name="login_error">用户名或者密码有误</string>
+
+
+    <!--菜单-->
+    <string name="introduction">去填写您的个人介绍吧！</string>
+    <string-array name="navDrawerItems">
+        <item>通知</item>
+        <item>工作</item>
+        <item>工具</item>
+        <item>业绩</item>
+        <item>联系人</item>
+    </string-array>
+    <string-array name="navDrawerIcons">
+        <item>@drawable/ic_all_done</item>
+        <item>@drawable/ic_cloud_off</item>
+        <item>@drawable/ic_create</item>
+        <item>@drawable/ic_delete</item>
+        <item>@drawable/ic_inbox</item>
+    </string-array>
 </resources>

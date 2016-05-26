@@ -33,4 +33,10 @@
     <!--========================================-->
 
     <color name="lignt_red">#FF7F66</color>
+
+    <!--========================================-->
+
+
+    <color name="statusBarColor">#4169E1</color>
+    <color name="toolBarColor">#4682B4</color>
 </resources>

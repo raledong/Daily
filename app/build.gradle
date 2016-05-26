@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "rookie.android.daily"
-        minSdkVersion 18
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -55,6 +55,7 @@ dependencies {
     apt 'com.hannesdorfmann.parcelableplease:processor:' + rootProject.ext.parcelablepleaseVersion
 
     compile 'com.jakewharton:butterknife:' + rootProject.ext.butterknifeVersion
+    apt 'com.jakewharton:butterknife-compiler:' + rootProject.ext.butterknifeVersion
 
     compile 'frankiesardo:icepick:' + rootProject.ext.icepickVersion
     apt 'frankiesardo:icepick-processor:' + rootProject.ext.icepickVersion

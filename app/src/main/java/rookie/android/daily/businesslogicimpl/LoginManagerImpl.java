@@ -2,6 +2,7 @@ package rookie.android.daily.businesslogicimpl;
 
 import rookie.android.daily.businesslogic.LoginManager;
 import rookie.android.daily.enumerate.LoginResult;
+import rookie.android.daily.model.Person;
 import rookie.android.daily.presentationmodel.AuthCredentials;
 import rookie.android.daily.presentationmodel.SignUpInfo;
 
@@ -30,11 +31,20 @@ public class LoginManagerImpl implements LoginManager {
             //
             //实现bl的判断
             //
+            if(authCredentials.getUserId().equals("rale")&&authCredentials.getPassword().equals("rale"))
+                return LoginResult.SUCCESS;
+            else
+                return LoginResult.FAIL;
+
         }else{
             return validate(authCredentials);
         }
 
-        return LoginResult.SUCCESS;
+    }
+
+    @Override
+    public Person findById(String id) {
+        return new Person();
     }
 
     @Override
