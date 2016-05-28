@@ -36,4 +36,16 @@
         <item>@drawable/ic_delete</item>
         <item>@drawable/ic_inbox</item>
     </string-array>
+
+
+    <!--联系人-->
+    <string name="mobile_contact">手机通讯录</string>
+    <string name="daily_user_contact">Daily好友</string>
+    <string name="my_group_contact">我的群组</string>
+    <string name="special_contact">特别关注</string>
+
+
+    <!--通用-->
+    <string name="empty">空空如也</string>
+
 </resources>

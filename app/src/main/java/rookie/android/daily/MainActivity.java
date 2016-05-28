@@ -22,6 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import icepick.Icepick;
 import rookie.android.daily.base.view.BaseActivity;
+import rookie.android.daily.util.FragmentFactory;
 
 public class MainActivity extends BaseActivity {
 
@@ -50,6 +51,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         //Let's first set up toolbar
+        mTitle = mDrawerTitle = getTitle();
         setupToolbar();
 
         //Setup Titles and Icons of Navigation Drawer
@@ -108,7 +110,6 @@ public class MainActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.base_menu, menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -131,8 +132,10 @@ public class MainActivity extends BaseActivity {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-        Toast.makeText(getBaseContext(), intent.getStringExtra(TITLE), Toast.LENGTH_SHORT).show();
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+        //通过intent判断进行什么跳转
+        selectAction(intent);
+
 
     }
 
@@ -149,5 +152,23 @@ public class MainActivity extends BaseActivity {
         intent.putExtra(TITLE, label);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         context.startActivity(intent);
+    }
+
+    public void selectAction(Intent intent){
+        String showAction = intent.getStringExtra(KEY_SHOW_ACTION);
+        switch (showAction){
+            case ACTION_LABEL:
+                showMenuAction(intent.getStringExtra(TITLE));
+        }
+    }
+
+    private void showMenuAction(String label){
+        toolbar.setTitle(label);
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.leftPane, FragmentFactory.getFragmentByLabel(label))
+                .commit();
     }
 }

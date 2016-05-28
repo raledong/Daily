@@ -26,6 +26,7 @@
     <color name="white">#FFFFFF</color>
     <color name="toolbar_drawer_color">@color/white</color>
 
+
     <color name="light_grey">#DEDEDE</color>
     <color name="star_deactivated">#D6D6D6</color>
 
@@ -39,4 +40,10 @@
 
     <color name="statusBarColor">#4169E1</color>
     <color name="toolBarColor">#4682B4</color>
+
+    <!--========================================-->
+    <!--即 抄来的list的header颜色-->
+    <color name="header_normal">#ffe74c3c</color>
+    <color name="header_pressed">#ffc0392b</color>
+    <color name="menu_section_header">#FFDDDDDD</color>
 </resources>
